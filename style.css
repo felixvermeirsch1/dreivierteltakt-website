@@ -291,6 +291,56 @@ section {
   color: var(--muted);
 }
 
+/* ---------- Instrument cards (with full, uncropped photo) ---------- */
+
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.instrument-card {
+  border-top: 1px solid var(--ink);
+  padding-top: 20px;
+}
+
+.instrument-card .photo {
+  aspect-ratio: 3 / 4;
+  background: var(--surface-deep);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instrument-card .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.instrument-card h3 { margin-bottom: 14px; }
+
+.instrument-meta {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.instrument-meta .meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.instrument-meta .meta-row span:first-child { color: var(--muted); }
+
 .instrument-thumb {
   width: 84px;
   height: 84px;
@@ -478,6 +528,7 @@ section {
   .split-reverse .split { direction: ltr; }
   .instrument-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
   .instrument-row .row-head { display: none; }
+  .instrument-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .bio-block { grid-template-columns: 1fr; }
   .bio-portrait { max-width: 200px; }
