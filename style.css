@@ -274,7 +274,7 @@ section {
 
 .instrument-row {
   display: grid;
-  grid-template-columns: 132px 1.4fr 0.8fr 0.8fr 0.9fr auto;
+  grid-template-columns: 100px 1.4fr 0.8fr 0.8fr 0.9fr auto;
   gap: 24px;
   align-items: center;
   padding: 26px 0;
@@ -295,8 +295,8 @@ section {
 
 .instrument-thumb {
   position: relative;
-  width: 132px;
-  height: 132px;
+  width: 100px;
+  height: 145px;
   border-radius: 3px;
   overflow: hidden;
   background: var(--surface-deep);
@@ -553,7 +553,7 @@ section {
   .split-reverse .split { direction: ltr; }
   .instrument-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
   .instrument-row .row-head { display: none; }
-  .instrument-thumb { width: 100px; height: 100px; margin-bottom: 6px; }
+  .instrument-thumb { width: 90px; height: 130px; margin-bottom: 6px; }
   .instrument-row [data-label]::before {
     content: attr(data-label) ": ";
     color: var(--ink-soft);
