@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Dreivierteltakt</title>
+<meta name="description" content="Kontaktieren Sie Dreivierteltakt für eine Anfrage, ein Probespiel oder eine Beratung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">Dreiviertel<span>takt</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Start</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="instrumente.html">Instrumente</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 40px;">
+  <div class="wrap" style="display:block;">
+    <span class="label">Kontakt</span>
+    <h1 style="max-width: 16ch;">Sprechen wir über Ihr Instrument.</h1>
+    <p class="lede">Platzhaltertext: Kurzer, einladender Satz, der zur Kontaktaufnahme ermutigt.</p>
+  </div>
+</section>
+
+<svg class="string-divider wrap" viewBox="0 0 1120 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 20 C 180 4, 360 36, 560 20 S 940 4, 1120 20" stroke="currentColor" stroke-width="1.2"/>
+</svg>
+
+<section class="section-border-top">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="label">Anfrage</span>
+        <h2>Formular ausfüllen</h2>
+        <p class="muted" style="margin-bottom: 32px;">Wir melden uns in der Regel innerhalb von 2 Werktagen zurück.</p>
+
+        <!--
+          Hinweis für die spätere Einrichtung:
+          Für ein funktionierendes Formular (ohne eigenen Server) hier
+          das action-Attribut auf einen Dienst wie Formspree setzen, z. B.:
+          <form action="https://formspree.io/f/DEINE-ID" method="POST">
+        -->
+        <form class="form-grid" action="#" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="interesse">Interesse an</label>
+            <select id="interesse" name="interesse">
+              <option>3/4-Geige</option>
+              <option>3/4-Cello</option>
+              <option>Noch unsicher / Beratung gewünscht</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Platzhaltertext: z. B. Alter und Spielniveau des Kindes, gewünschter Zeitraum."></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Anfrage senden</button>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <span class="label">Direktkontakt</span>
+        <div class="info-list">
+          <div class="info-row">
+            <span class="label">Adresse</span>
+            <span>Platzhalter Straße 00<br>1010 Wien, Österreich</span>
+          </div>
+          <div class="info-row">
+            <span class="label">E-Mail</span>
+            <span>info@dreivierteltakt.org</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Telefon</span>
+            <span>+43 000 000 000</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Sprechzeiten</span>
+            <span>Platzhalter: Di–Fr, 10–17 Uhr, nach Vereinbarung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Dreivierteltakt</h4>
+        <p>Platzhalter: Straße 00, 1010 Wien, Österreich</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <p><a href="ueber-uns.html">Über uns</a></p>
+        <p><a href="instrumente.html">Instrumente</a></p>
+        <p><a href="kontakt.html">Kontakt</a></p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Platzhalter: info@dreivierteltakt.org</p>
+        <p>Platzhalter: +43 000 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dreivierteltakt</span>
+      <span>Wien, Österreich</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
