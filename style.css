@@ -291,55 +291,52 @@ section {
   color: var(--muted);
 }
 
-/* ---------- Instrument features (large, full photo per instrument) ---------- */
+/* ---------- Instrument cards (2-column, larger photo, fully visible) ---------- */
 
-.instrument-list {
+.instrument-grid {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
 }
 
-.instrument-feature {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  gap: 56px;
-  padding: 48px 0;
+.instrument-card {
   border-top: 1px solid var(--ink);
-  align-items: center;
+  padding-top: 22px;
 }
 
-.instrument-feature .photo {
+.instrument-card .photo {
   aspect-ratio: 3 / 4;
   background: var(--surface-deep);
   border: 1px solid var(--line);
   border-radius: 3px;
   overflow: hidden;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.instrument-feature .photo img {
+.instrument-card .photo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 20px;
+  padding: 18px;
 }
 
-.instrument-feature h3 { font-size: 1.7rem; margin-bottom: 18px; }
+.instrument-card h3 { font-size: 1.5rem; margin-bottom: 16px; }
 
 .instrument-meta {
   display: grid;
   gap: 8px;
-  margin-bottom: 24px;
-  max-width: 360px;
+  margin-bottom: 22px;
 }
 
 .instrument-meta .meta-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 10px;
+  padding-bottom: 9px;
 }
 
 .instrument-meta .meta-row span:first-child { color: var(--muted); }
@@ -531,8 +528,7 @@ section {
   .split-reverse .split { direction: ltr; }
   .instrument-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
   .instrument-row .row-head { display: none; }
-  .instrument-feature { grid-template-columns: 1fr; gap: 24px; }
-  .instrument-feature .photo { max-width: 320px; }
+  .instrument-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .bio-block { grid-template-columns: 1fr; }
   .bio-portrait { max-width: 200px; }
