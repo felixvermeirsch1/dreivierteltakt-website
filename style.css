@@ -382,7 +382,6 @@ section {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
-  cursor: zoom-out;
 }
 
 .lightbox-overlay.active {
@@ -391,25 +390,72 @@ section {
 }
 
 .lightbox-overlay img {
-  max-width: 88vw;
-  max-height: 88vh;
+  max-width: 82vw;
+  max-height: 84vh;
   object-fit: contain;
   border-radius: 3px;
+  cursor: zoom-out;
 }
 
-.instrument-thumb {
-  width: 84px;
-  height: 84px;
-  border-radius: 3px;
-  overflow: hidden;
-  background: var(--surface-deep);
-  border: 1px solid var(--line);
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(251, 249, 244, 0.35);
+  background: rgba(251, 249, 244, 0.08);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.instrument-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.lightbox-nav:hover { background: rgba(251, 249, 244, 0.18); }
+.lightbox-nav.prev { left: 16px; }
+.lightbox-nav.next { right: 16px; }
+.lightbox-nav svg { width: 20px; height: 20px; }
+.lightbox-nav.is-hidden { display: none; }
+
+.lightbox-dots {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.lightbox-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(251, 249, 244, 0.35);
+  cursor: pointer;
+}
+
+.lightbox-dots span.active { background: var(--surface); }
+
+/* Small dot indicator on the thumbnail itself, shown when it holds more than one photo */
+.instrument-thumb .gallery-hint {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.instrument-thumb .gallery-hint span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(251, 249, 244, 0.9);
+  box-shadow: 0 0 0 1px rgba(34, 27, 21, 0.3);
 }
 
 .instrument-name {
