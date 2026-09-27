@@ -274,7 +274,7 @@ section {
 
 .instrument-row {
   display: grid;
-  grid-template-columns: 84px 1.4fr 0.8fr 0.8fr 0.9fr auto;
+  grid-template-columns: 132px 1.4fr 0.8fr 0.8fr 0.9fr auto;
   gap: 24px;
   align-items: center;
   padding: 26px 0;
@@ -291,55 +291,80 @@ section {
   color: var(--muted);
 }
 
-/* ---------- Instrument cards (2-column, larger photo, fully visible) ---------- */
+/* ---------- Clickable thumbnail with zoom affordance ---------- */
 
-.instrument-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
-}
-
-.instrument-card {
-  border-top: 1px solid var(--ink);
-  padding-top: 22px;
-}
-
-.instrument-card .photo {
-  aspect-ratio: 3 / 4;
-  background: var(--surface-deep);
-  border: 1px solid var(--line);
+.instrument-thumb {
+  position: relative;
+  width: 132px;
+  height: 132px;
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 20px;
+  background: var(--surface-deep);
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+}
+
+.instrument-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.instrument-thumb:hover img {
+  transform: scale(1.08);
+}
+
+.instrument-thumb .zoom-hint {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(34, 27, 21, 0);
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
 }
 
-.instrument-card .photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 18px;
+.instrument-thumb:hover .zoom-hint {
+  opacity: 1;
+  background: rgba(34, 27, 21, 0.38);
 }
 
-.instrument-card h3 { font-size: 1.5rem; margin-bottom: 16px; }
-
-.instrument-meta {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 22px;
+.instrument-thumb .zoom-hint svg {
+  width: 24px;
+  height: 24px;
+  stroke: #FBF9F4;
 }
 
-.instrument-meta .meta-row {
+/* ---------- Lightbox ---------- */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 12, 0.94);
   display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 9px;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  cursor: zoom-out;
 }
 
-.instrument-meta .meta-row span:first-child { color: var(--muted); }
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-overlay img {
+  max-width: 88vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 3px;
+}
 
 .instrument-thumb {
   width: 84px;
@@ -528,7 +553,7 @@ section {
   .split-reverse .split { direction: ltr; }
   .instrument-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
   .instrument-row .row-head { display: none; }
-  .instrument-grid { grid-template-columns: 1fr; gap: 32px; }
+  .instrument-thumb { width: 100%; height: auto; aspect-ratio: 4 / 3; margin-bottom: 4px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .bio-block { grid-template-columns: 1fr; }
   .bio-portrait { max-width: 200px; }

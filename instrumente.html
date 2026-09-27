@@ -42,41 +42,52 @@
       <span class="label">Geigen · 3/4</span>
       <h2>Dreiviertel-Geigen im Bestand</h2>
     </div>
-    <div class="instrument-grid">
-      <div class="instrument-card">
-        <div class="photo">
+    <div class="instrument-table">
+      <div class="instrument-row row-head">
+        <span></span>
+        <span>Instrument</span>
+        <span>Baujahr</span>
+        <span>Herkunft</span>
+        <span>Miete / Monat</span>
+        <span></span>
+      </div>
+      <div class="instrument-row">
+        <div class="instrument-thumb zoomable" data-full="geige-platzhalter.jpg" tabindex="0" role="button" aria-label="Foto von Platzhalter-Geige I vergrößern">
           <img src="geige-platzhalter.jpg" alt="Platzhalterfoto einer Dreiviertel-Geige">
+          <span class="zoom-hint" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"></circle><line x1="19" y1="19" x2="14.65" y2="14.65"></line><line x1="10" y1="7" x2="10" y2="13"></line><line x1="7" y1="10" x2="13" y2="10"></line></svg>
+          </span>
         </div>
-        <h3>Platzhalter-Geige I</h3>
-        <div class="instrument-meta">
-          <div class="meta-row"><span>Baujahr</span><span>ca. 19xx</span></div>
-          <div class="meta-row"><span>Herkunft</span><span>Platzhalter</span></div>
-          <div class="meta-row"><span>Miete / Monat</span><span>ab € 00,–</span></div>
-        </div>
+        <span class="instrument-name">Platzhalter-Geige I</span>
+        <span class="muted">ca. 19xx</span>
+        <span class="muted">Platzhalter</span>
+        <span class="muted">ab € 00,–</span>
         <a href="kontakt.html" class="btn btn-ghost">Anfragen</a>
       </div>
-      <div class="instrument-card">
-        <div class="photo">
+      <div class="instrument-row">
+        <div class="instrument-thumb zoomable" data-full="geige-platzhalter.jpg" tabindex="0" role="button" aria-label="Foto von Platzhalter-Geige II vergrößern">
           <img src="geige-platzhalter.jpg" alt="Platzhalterfoto einer Dreiviertel-Geige">
+          <span class="zoom-hint" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"></circle><line x1="19" y1="19" x2="14.65" y2="14.65"></line><line x1="10" y1="7" x2="10" y2="13"></line><line x1="7" y1="10" x2="13" y2="10"></line></svg>
+          </span>
         </div>
-        <h3>Platzhalter-Geige II</h3>
-        <div class="instrument-meta">
-          <div class="meta-row"><span>Baujahr</span><span>ca. 19xx</span></div>
-          <div class="meta-row"><span>Herkunft</span><span>Platzhalter</span></div>
-          <div class="meta-row"><span>Miete / Monat</span><span>ab € 00,–</span></div>
-        </div>
+        <span class="instrument-name">Platzhalter-Geige II</span>
+        <span class="muted">ca. 19xx</span>
+        <span class="muted">Platzhalter</span>
+        <span class="muted">ab € 00,–</span>
         <a href="kontakt.html" class="btn btn-ghost">Anfragen</a>
       </div>
-      <div class="instrument-card">
-        <div class="photo">
+      <div class="instrument-row">
+        <div class="instrument-thumb zoomable" data-full="geige-platzhalter.jpg" tabindex="0" role="button" aria-label="Foto von Platzhalter-Geige III vergrößern">
           <img src="geige-platzhalter.jpg" alt="Platzhalterfoto einer Dreiviertel-Geige">
+          <span class="zoom-hint" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"></circle><line x1="19" y1="19" x2="14.65" y2="14.65"></line><line x1="10" y1="7" x2="10" y2="13"></line><line x1="7" y1="10" x2="13" y2="10"></line></svg>
+          </span>
         </div>
-        <h3>Platzhalter-Geige III</h3>
-        <div class="instrument-meta">
-          <div class="meta-row"><span>Baujahr</span><span>ca. 19xx</span></div>
-          <div class="meta-row"><span>Herkunft</span><span>Platzhalter</span></div>
-          <div class="meta-row"><span>Miete / Monat</span><span>ab € 00,–</span></div>
-        </div>
+        <span class="instrument-name">Platzhalter-Geige III</span>
+        <span class="muted">ca. 19xx</span>
+        <span class="muted">Platzhalter</span>
+        <span class="muted">ab € 00,–</span>
         <a href="kontakt.html" class="btn btn-ghost">Anfragen</a>
       </div>
     </div>
@@ -189,6 +200,46 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+
+  function openLightbox(el) {
+    var src = el.getAttribute('data-full');
+    var imgEl = el.querySelector('img');
+    lightboxImg.src = src;
+    lightboxImg.alt = imgEl ? imgEl.alt : '';
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('.zoomable').forEach(function (el) {
+    el.addEventListener('click', function () { openLightbox(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(el);
+      }
+    });
+  });
+
+  overlay.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
 
 </body>
 </html>
