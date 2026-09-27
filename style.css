@@ -1,5 +1,5 @@
 /* ============================================
-   Dreivierteltakt — Shared Stylesheet
+   Taktwechsel: Shared Stylesheet
    ============================================ */
 
 :root {
@@ -223,7 +223,7 @@ section {
 
 .section-head .label { display: block; margin-bottom: 14px; }
 
-/* Feature list (no cards/shadows — thin top rule per item) */
+/* Feature list (no cards or shadows, thin top rule per item instead) */
 
 .feature-grid {
   display: grid;
@@ -307,7 +307,8 @@ section {
 .instrument-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 3px;
   transition: transform 0.25s ease;
 }
 
@@ -388,7 +389,7 @@ section {
 
 .instrument-row .btn { padding: 9px 18px; font-size: 0.9rem; }
 
-/* ---------- Process steps (genuine sequence — numbering justified) ---------- */
+/* ---------- Process steps (genuine sequence, numbering justified) ---------- */
 
 .process-list {
   display: grid;
